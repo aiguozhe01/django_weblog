@@ -3,7 +3,7 @@ from .models import Post # from models.py, import Post
 
 def home(request):
     context = {
-        'posts': Post.objects.all() # key: value
+        'posts': Post.objects.all()
     }
     return render(request, 'blog/home.html', context)
 
