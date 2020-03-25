@@ -28,6 +28,7 @@ urlpatterns = [
     path('profile/', user_views.profile, name='profile'),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'), # Django will handel the form and backend stuff.
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'), # We still need to make a template.
+    path('password-reset/', auth_views.PasswordResetView.as_view(template_name='users/password_reset.html'), name='password_reset'), # We still need to make a template.  
     path('', include('blog.urls')), # The empty path means, the homepage will be under localhost:800
 ]
 
