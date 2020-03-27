@@ -18,7 +18,6 @@ from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-
 from users import views as user_views
 
 # This urls are for the entrance to your blog only. Once this sends to the blog, it is done.
@@ -31,6 +30,7 @@ urlpatterns = [
     path('password-reset/', auth_views.PasswordResetView.as_view(template_name='users/password_reset.html'), name='password_reset'), # We still need to make a template.  
     path('password-reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='users/password_reset_done.html'), name='password_reset_done'), # We still need to make a template.  
     path('password-reset-confrim/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='users/password_reset_confirm.html'), name='password_reset_confirm'), # We still need to make a template.  
+    path('password-reset-complete/', auth_views.PasswordResetCompleteView.as_view(template_name='users/password_reset_complete.html'), name='password_reset_complete'), # We still need to make a template.  
     path('', include('blog.urls')), # The empty path means, the homepage will be under localhost:800
 ]
 
